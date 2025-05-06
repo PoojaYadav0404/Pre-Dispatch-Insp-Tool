@@ -2,7 +2,7 @@ function approved() {
   var UserId = Session.getActiveUser().getEmail();
   var AppBy = ActiveSheet.getRange(ActiveSheet.getLastRow(), 11).getValue();
 
-  if (!MasterSheets.includes(ActiveSheetName) && AppBy != "" && (UserId == "ops@bajato.com" || UserId == "rajatbajaj@bajato.com") && CustName != ""  && InspDate != "" && InspTime != "" && InspEng != "" && InspNo != "") {
+  if (!MasterSheets.includes(ActiveSheetName) && AppBy != "" && (UserId == "") && CustName != ""  && InspDate != "" && InspTime != "" && InspEng != "" && InspNo != "") {
 
     var InspArr = (!ListSheet.getLastRow() < 1) ? ListSheet.getRange(2, 1, ListSheet.getLastRow() - 1, 1).getValues().map(insp => { return insp.toString() }) : [];
     var Row = InspArr.indexOf(InspNo.toString()) + 2;
@@ -17,8 +17,8 @@ function approved() {
         var Ans = Response.getResponseText();
         Logger.log(Ans);
 
-        var FolderId = "16H4santYSj_CZ_N7pBSiG5Sz93MYApWJ"
-        var MasterFormatId = "1i546XQOZ_wlCfpokI6xnOzQTVSBqm8ZL4Ynhky-RuVg";
+        var FolderId = "5Sz93MYApWJ"
+        var MasterFormatId = "1i546XQOZ";
         var MainDrive = DriveApp.getFolderById(FolderId);
         try {
           var CustomerFdr = MainDrive.getFoldersByName(CustName).next();
