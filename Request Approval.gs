@@ -5,7 +5,7 @@ function requestApproval() {
     var RecordFound = InspData.filter(r => r[0] == InspNo);
 
     if (RecordFound.length === 0) {
-      var InspReportLink = "https://docs.google.com/spreadsheets/d/1SQm5_sBzbPM-vOQnuR0vtoXFaKm_SFJrU-TdkMAD0hY/edit?gid=" + ActiveSheet.getSheetId().toString();
+      var InspReportLink = "https://docs.google.com/spreadsheets/d/1SQm5Y/edit?gid=" + ActiveSheet.getSheetId().toString();
       var url_base = "https://docs.google.com/spreadsheets/d/SS_ID/export?".replace("SS_ID", ss.getId());
       var url_ext = 'export?exportFormat=pdf&format=pdf' //export as pdf/ csv. xls
         // Print either the entire Spreadsheet or the specified sheet if optSheetId is provided
